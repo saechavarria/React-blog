@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { db } from "../firebase";
 
@@ -32,9 +33,12 @@ function BlogContent() {
                 </h4>
               </div>
               <div className="row">
-                <a href={`/${post.id}`} className="btn btn-outline-info">
-                  Read more
-                </a>
+
+                <Link to={`/post/${post.id}`}>
+                  <button className="btn btn-outline-info">
+                    Read more
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

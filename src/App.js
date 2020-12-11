@@ -25,10 +25,12 @@ function App() {
       </main>
 
       <Switch>
+        <Route path="/post/:id">
+          <Post />
+        </Route>
         <Route path="/">
           <BlogContent />
         </Route>
-        <Route path="/:id" children={<Post />} />
       </Switch>
       <hr></hr>
       <Footer />
