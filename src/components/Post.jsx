@@ -22,12 +22,13 @@ function Post() {
     });
   };
 
+  const getResponse = async () => {
+    const response = await getPost(id);
+    setData(response);
+    setLoading(false);
+  };
+
   useEffect(() => {
-    const getResponse = async () => {
-      const response = await getPost(id);
-      setData(response);
-      setLoading(false);
-    };
     getResponse()
   }, []);
 
