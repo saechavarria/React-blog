@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import g2rekkles from "../img/g2rekkles.jpg";
 
@@ -34,9 +34,9 @@ function Post() {
           </p>
         </div>
         <div className="row">
-          <a href="/" className="btn btn-outline-info">
-            Back to the posts
-          </a>
+          <Link to="/">
+            <button className="btn btn-outline-info">Back to the posts</button>
+          </Link>
         </div>
       </div>
     </div>
