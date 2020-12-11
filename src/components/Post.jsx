@@ -1,17 +1,55 @@
-import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-import g2rekkles from "../img/g2rekkles.jpg";
+import { Link, useParams } from "react-router-dom";
+import { db } from "../firebase";
 
 function Post() {
   const { id } = useParams();
-  console.log(id);
+
+  const [data, setData] = useState([]);
+
+  const [loading, setLoading] = useState(true);
+
+  const getPost = (id) => {
+    return new Promise(async (resolved, reject) => {
+      try {
+        const doc = await db.collection("Posts").doc(id).get();
+        const docData = doc.data();
+        resolved(docData);
+      } catch (error) {
+        reject(new Error(error));
+      }
+    });
+  };
+
+  useEffect(() => {
+    const getResponse = async () => {
+      const response = await getPost(id);
+      setData(response);
+      setLoading(false);
+    };
+    getResponse()
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="spinner-grow text-primary" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container">
       <div className="col-12 justify-content-center">
         <div className="row justify-content-center">
           <div className="col-12">
             <h1>
-              <strong>G2 Rekkles Confirmed</strong>
+              <strong>{data.title}</strong>
             </h1>
           </div>
         </div>
@@ -19,7 +57,7 @@ function Post() {
         <div className="row justify-content-center">
           <div className="col-12">
             <img
-              src={g2rekkles}
+              src={data.img}
               className="img-fluid"
               alt="Responsive in detail"
             />
@@ -28,15 +66,7 @@ function Post() {
         <br />
         <div className="row justify-content-center">
           <div className="col-12">
-            <p>
-              Fnatic has lost their long-time AD Carry, Martin “Rekkles”
-              Larsson. According to Esportsmaníacos journalist Pablo “BloopGG”
-              Suarez, Rekkles is reportedly heading to G2 Esports for the 2021
-              season, replacing Luka “Perkz” Perković. The veteran bot laner has
-              spent the eight years with Fnatic, achieving incredible results in
-              the LEC and at Worlds. While some may see this as a huge loss for
-              Fnatic, it’s only the beginning of some long overdue changes.
-            </p>
+            <p>{data.description}</p>
           </div>
         </div>
         <div className="row">
