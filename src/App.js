@@ -25,7 +25,7 @@ function App() {
       </main>
 
       <Switch>
-        <Route exact path="/">
+        <Route path="/">
           <BlogContent />
         </Route>
         <Route path="/:id" children={<Post />} />
