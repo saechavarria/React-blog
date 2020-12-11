@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/React-blog/static/css/main.e2e72768.chunk.css",
+    "main.js": "/React-blog/static/js/main.529516dd.chunk.js",
+    "main.js.map": "/React-blog/static/js/main.529516dd.chunk.js.map",
+    "runtime-main.js": "/React-blog/static/js/runtime-main.b755a69b.js",
+    "runtime-main.js.map": "/React-blog/static/js/runtime-main.b755a69b.js.map",
+    "static/css/2.1a02f21c.chunk.css": "/React-blog/static/css/2.1a02f21c.chunk.css",
+    "static/js/2.1a139e40.chunk.js": "/React-blog/static/js/2.1a139e40.chunk.js",
+    "static/js/2.1a139e40.chunk.js.map": "/React-blog/static/js/2.1a139e40.chunk.js.map",
+    "index.html": "/React-blog/index.html",
+    "static/css/2.1a02f21c.chunk.css.map": "/React-blog/static/css/2.1a02f21c.chunk.css.map",
+    "static/css/main.e2e72768.chunk.css.map": "/React-blog/static/css/main.e2e72768.chunk.css.map",
+    "static/js/2.1a139e40.chunk.js.LICENSE.txt": "/React-blog/static/js/2.1a139e40.chunk.js.LICENSE.txt",
+    "static/media/g2rekkles.cc109aa6.jpg": "/React-blog/static/media/g2rekkles.cc109aa6.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b755a69b.js",
+    "static/css/2.1a02f21c.chunk.css",
+    "static/js/2.1a139e40.chunk.js",
+    "static/css/main.e2e72768.chunk.css",
+    "static/js/main.529516dd.chunk.js"
+  ]
+}
