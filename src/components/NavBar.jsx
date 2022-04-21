@@ -19,7 +19,7 @@ function NavBar() {
                 <ul className="list-unstyled">
                   <li>
                     <a
-                      href="https://www.instagram.com/sechavarria20/"
+                      href="https://www.instagram.com/santi_erodriguez/"
                       className="text-white"
                       target="_blank"
                       rel="noopener noreferrer"
